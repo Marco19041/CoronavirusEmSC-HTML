@@ -1,0 +1,464 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Da+2:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+ overflow: hidden;
+}
+button:focus{
+  outline: 0;
+}
+#header{
+  display: flex;
+}
+#titlediv{
+  position: absolute;
+  padding-top:5px;
+  height:80px;
+  width:500px;
+  left: 0;
+  right:0;
+  margin: 35px auto;
+  border-radius: 100px;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  background: white;
+}
+#virusimg{
+  padding-left: 5px;
+  width: 75px;
+  height: 75px;
+}
+#titlep{
+  padding-left: 20px;
+  width: auto;
+  align-self: center;
+  font-size: 30px;
+  font-family: 'Baloo Da 2', cursive;
+  font-weight: 500;
+  color: #3E3E3E;
+}
+
+#updatediv{
+  left: 0;
+  right:0;
+  margin: 130px auto;
+  position: absolute;
+  width: 280px;
+}
+
+#timefornextupdatediv{
+  position: absolute;
+  margin: 50px;
+  width: 180px;
+}
+#updatep, #timefornextupdatep{
+  color: #DDDDDD;
+  font-family: 'Baloo Da 2', cursive;
+  font-weight: bold;
+  font-size: 19px;
+  line-height:27px;
+}
+#lastupdatedate{
+  color: #292929;
+}
+#timefornextupdate{
+  font-size: 70px;
+  color: #292929;
+  line-height: 50px;
+}
+#cliquepara{
+  text-align: center;
+  color: #3e3e3e;
+  font-family: 'Baloo Da 2', cursive;
+  font-size: 22px;
+  font-weight: 500;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  background: white;
+}
+#cliquepara span{
+  color:#00e689;
+}
+#infobtn{
+  font-family: 'Baloo Da 2', cursive;
+  font-weight: bold;
+  color: #292929;
+  font-size: 35px;
+  background-color: white;
+  border-radius: 100px;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  right: 0;
+  margin: 35px;
+  transition: .3s;
+  width: 70px;
+  height: 70px;
+  border: 0px solid rgba(0, 247, 148, .3);
+}
+#infobtn p{
+  transform: translateY(3px);
+}
+#infobtn:hover {
+  transition: .3s;
+  cursor: pointer;
+  border: 5px solid rgba(0, 247, 148, .3);
+}
+
+#santacatarinasvg{
+  z-index: -1;
+  transform: translate(-5%, 80px );
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto ;
+  height: 70%;
+}
+#santacatarinasvg path{
+  transition: .1s;
+}
+#detailsdiv{
+  text-align: center;
+  right: 0;
+  z-index: -1;
+  position: absolute;
+  background: white;
+  height: 100%;
+  width: 250px;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.1);
+}
+.detailscontent{
+  color: #292929;
+  font-family: 'Baloo Da 2', cursive;
+  margin-top: 50%;
+}
+.detailscontent h3{
+  font-size: 40px;
+}
+.detailscontent p{
+  line-height:35px;
+  font-size: 22px;
+  font-weight: 500;
+}
+.detailscontent .numbers{
+  font-size: 40px;
+  font-weight: bold;
+  color: #00e689;
+}
+.detailscontent:not(#detailscontentsc){
+  display: none;
+}
+
+#downarrowdiv{
+  z-index: -1;
+  display: none;
+}
+
+#escala{
+  width: 200px;
+  position: absolute;
+  left: 0;
+
+  margin: 35px;
+  bottom: 0;
+}
+#infoscreen{
+  position: fixed;
+  background: white;
+  width: 100%;
+  height: 100%;
+  transform: translateX(100%);
+  transition: 0.5s;
+  z-index: 10;
+}
+#infoscreencontent{
+  text-align: center;
+  width: 700px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 40px auto;
+}
+#infoscreen img{
+  width: 90%;
+}
+#infoscreencontent span{
+  color: #00e689;
+}
+#infoscreencontent h2{
+  color: #00e689;
+  font-family: 'Baloo Da 2', cursive;
+  font-size: 40px;
+  font-weight: 600;
+}
+#infoscreen p{
+  color: #606060;
+  font-family: 'Baloo Da 2', cursive;
+  font-size: 22px;
+  font-weight: 500;
+}
+a{
+  text-decoration: underline;
+  color: #00e689;
+}
+#xdiv{
+  right: 0;
+  margin: 35px;
+  position: absolute;
+  width: 70px;
+  height: 70px;
+}
+#xbtn{
+
+  font-family: 'Baloo Da 2', cursive;
+  font-size: 40px;
+  font-weight: 500;
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  border: 0px solid rgba(0, 247, 148, .3);
+  transition: .3s;
+  line-height: 0px;
+}
+#xbtn:hover{
+  cursor: pointer;
+  transition: .3s;
+  border: 5px solid rgba(0, 247, 148, .3);
+}
+#marginbottom{
+  display: none;
+}
+
+#cliquepara span:after{
+content: 'Passe o mouse';
+}
+#codigo{
+  font-family: 'Baloo Da 2', cursive;
+  font-size: 20px;
+  font-weight: 500;
+  color: #3e3e3e;
+
+  position: absolute;
+  left: 0;
+  transform: translateY(-100px);
+  margin: 35px;
+  bottom: 0;
+}
+.searchbar{
+  color: #3e3e3e;
+  font-size: 18px;
+  padding: 8px;
+  padding-right: 20px;
+  width: 180px;
+  position: absolute;
+  left: 0;
+  margin: 35px;
+  bottom: 0;
+  transform: translateY(-100px);
+  border-radius: 10px;
+  border: 2px solid #eee;
+  background-color: white;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+#searchicon{
+  transform: translate(183px,-110px);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 20px;
+  margin: 35px;
+  color: #525252;
+}
+#searchbarmobile{
+  display: none;
+}
+#searchbarmobilediv{
+  display: none;
+}
+@media (max-width: 1080px){
+body{
+  overflow:auto;
+  overflow-x: hidden;
+}
+#header{
+  display: block;
+}
+  #titlediv{
+    position: inherit;
+    margin: 20px 20px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 10px;
+  }
+  #titlep{
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    transform: translateX(-20px);
+  }
+  #timefornextupdatediv{
+    position: inherit;
+    margin: 15px auto;
+    text-align: center;
+    transform: translateY(0px);
+    width: 100%;
+  }
+  #updatediv{
+    margin: 10px auto;
+    position: inherit;
+  }
+  #escala{
+  position: inherit;
+  margin: 50px auto;
+  margin-top: 70px;
+  right: 0
+  left:0;
+  display: block;
+  }
+  #santacatarinasvg{
+  position: inherit;
+  width: 100%;
+  transform: translate(0,10px);
+  }
+  #detailsdiv{
+    border-radius: 20px;
+  position: inherit;
+  margin: 0px auto;
+  margin-bottom: -10px;
+  right: 0;
+  left:0;
+  transform: translate(0, 10px);
+  padding: 40px 0;
+  }
+  .detailscontent{
+    vertical-align: middle;
+    margin-top: 0px;
+  }
+  #downarrowdiv{
+    display: inherit;
+    height: 0px;
+    transform: translate(0, -66px);
+  }
+  #infobtn{
+    display: block;
+    margin: 0px auto;
+    right: 0;
+    left:0;
+  }
+  #infoscreen{
+    top: 0;
+    height: calc(100% + 100px);
+  }
+  #infoscreencontent{
+    text-align: center;
+    width: calc(100% - 50px);
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 20px auto;
+    pointer-events: none;
+  }
+
+  #infoscreencontent h1{
+    font-size: 40px;
+  }
+  #infoscreen p{
+    color: #606060;
+    font-family: 'Baloo Da 2', cursive;
+    font-size: 22px;
+    font-weight: 500;
+  }
+  #xdiv{
+    margin: 20px;
+    width: 50px;
+    height: 50px;
+  }
+  #marginbottom{
+    display: block;
+    height: 100px;
+  }
+  .br{
+    display: none;
+  }
+  #specificbr{
+    display:block;
+  }
+  #cliquepara{
+    margin: 0 auto;
+    width: 200px;
+  }
+  #cliquepara span:after{
+  content: 'Clique';
+  }
+
+  #searchicon{
+    display: none;
+  }
+
+  #searchbarmobilediv{
+    display: block;
+    position: sticky;
+    right: 0;
+    left: 0;
+    top: 0;
+    height: 100%;
+    text-align: center;
+    z-index: 1;
+    transition: .6s;
+
+
+  }
+  .searchbar{
+    display: none;
+  }
+  #searchbarmobile{
+    all:unset;
+    display: block;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: #3e3e3e;
+    font-size: 23px;
+    padding: 8px;
+    padding-right: 20px;
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.1);
+    overflow-x: hidden;
+  }
+  #searchiconmobile{
+    position: absolute;
+    z-index: 1;
+    transform: translate(130px,27px);
+    color: #525252;
+    font-size: 25px;
+  }
+
+}
+  @media (max-width: 500px){
+    #titlep{
+      font-size: 25px;}
+      #infoscreen p{
+        line-height: 28px;
+      }
+}
+@media screen and (max-height: 700px) {
+   html {
+     zoom: 75%;
+   }
+   #infoscreencontent{
+     height: auto;
+   }
+   #infoscreencontent img{
+     width: 40%;
+   }
+
+}

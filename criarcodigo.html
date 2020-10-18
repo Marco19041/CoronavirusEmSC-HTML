@@ -1,0 +1,231 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CoronavirusEmSC Embeded</title>
+    <script src="https://kit.fontawesome.com/414313045a.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+    <div id="settingswindow">
+      <form action="/action_page.php">
+
+        <h1>Customize:</h1><br>
+
+        <label for="largura">Largura (px):</label><br>
+        <input type="number" id="largura" name="largura" value="500"><br><br>
+
+        <label for="altura">Altura (px):</label><br>
+        <input type="number" id="altura" name="altura" value="1500"><br><br>
+
+        <label for="zoom">Zoom (decimal):</label><br>
+        <input type="number" id="zoom" name="zoom" value="0.75"><br><br>
+
+        <label for="tamanhodaborda">Tamanho da borda (px):</label><br>
+        <input type="number" id="tamanhodaborda" name="tamanhodaborda" value="3"><br><br>
+
+        <label for="cor">Cores (0-360):</label><br>
+        <input type="number" id="cor" name="cor" value="0"><br><br>
+
+        <label for="scrollingcheckbox">Ativar rolagem:</label><br>
+        <input type="checkbox" id="scrollingcheckbox" name="scrollingcheckbox"><br><br>
+
+        <label for="codigo">Código para seu site:</label><br>
+        <textarea name="codigo" rows="7" cols="45" id="codigo"></textarea><br><br>
+
+        <button type="button" name="button" onclick="Copytext()" id="copiarbtn">Copiar código</button><br><br>
+
+      </form>
+
+
+  </div>
+  <div id="closebtndiv"><input type="checkbox" name="button" id="closebtn" style="opacity:0" onclick="Hide()"></input><i class="fas fa-bars"></i></div>
+
+
+        <style>
+          @import url('https://fonts.googleapis.com/css?family=Baloo+Da+2:400,500,600,700&display=swap');
+          *{
+            margin:0;
+            font-family: 'Baloo Da 2', cursive;
+            font-weight: 500;
+            color: #3E3E3E;
+          }
+          div{
+            position: fixed;
+            width:300px;
+            height:100%;
+            background-color: #fff;
+            box-shadow: 0 3px 20px rgba(0, 0, 0, 0.1);
+            right:0;
+            z-index:1;
+            transition: transform 330ms ease-in-out;
+            transform: translateX(0%);
+          }
+          form{
+            text-align:center;
+            margin-top:60px;
+            line-height:23px;
+          }
+
+          #closebtn{
+            width:35px;
+            height:35px;
+            z-index:2;
+          }
+          #closebtndiv{
+            text-align:center;
+            border-radius:18px;
+            margin:20px;
+            position:fixed;
+            width:35px;
+            height:35px;
+            top:0;
+            right:0;
+
+            border:none;
+            font-size:25px;
+            line-height:37px;
+            z-index:1;
+            box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+
+          }
+          #closebtndiv:focus{
+            outline:none;
+          }
+          #closebtndiv:active{
+            background-color:#f0f0f0;
+          }
+          #closebtn:hover{
+            cursor:pointer;
+          }
+          i{
+            transform: translateY(-46.4px);
+            font-size:15px;
+            pointer-events:none;
+          }
+          #copiarbtn{
+            font-size:17px;
+            line-height:40px;
+            width:160px;
+            height:40px;
+            background: none;
+            border-radius:20px;
+            border:none;
+            box-shadow: 0 3px 20px rgba(0, 0, 0, 0.17);
+          }
+          #copiarbtn:hover{
+            cursor:pointer;
+
+          }
+          #copiarbtn:active{
+            background-color:#f0f0f0;
+          }
+          #copiarbtn:focus{
+            outline:none;
+          }
+
+          input{
+            font-size:17px;
+            border-radius:3px;
+            border: 1px solid #eee;
+          }
+          input:focus{
+            outline:none;
+          }
+          textarea{
+            border-radius:3px;
+            border: 1px solid #eee;
+          }
+          textarea:focus{
+            outline:none;
+          }
+
+
+        </style>
+
+    <iframe src="newHTML.html" id="coronavirusemsciframe"></iframe>
+    <style>
+
+      #coronavirusemsciframe{
+
+        width:500px;
+        height:1500px;
+
+        -ms-zoom: 0.75;
+        -moz-transform: scale(0.75);
+        -moz-transform-origin: 0 0;
+        -o-transform: scale(0.75);
+        -o-transform-origin: 0 0;
+        -webkit-transform: scale(0.75);
+        -webkit-transform-origin: 0 0;
+
+        border: 3px solid rgba(0, 247, 148, .3);
+
+
+        margin:25px;
+          }
+    </style>
+
+    <script>
+
+      var coronavirusemsciframe = document.querySelector("#coronavirusemsciframe");
+      var largura = document.querySelector("#largura");
+      var altura = document.querySelector("#altura");
+      var zoom = document.querySelector("#zoom");
+      var tamanhodaborda = document.querySelector("#tamanhodaborda");
+      var cor = document.querySelector("#cor");
+      var scrollingcheckbox = document.querySelector("#scrollingcheckbox");
+      var codigo = document.querySelector("#codigo");
+      var settingswindow = document.querySelector("#settingswindow");
+      var closebtn = document.querySelector("#closebtn");
+      var closebtndiv = document.querySelector("#closebtndiv");
+
+      setInterval(function apply(){
+        coronavirusemsciframe.style.width = largura.value + "px" ;
+        coronavirusemsciframe.style.height = altura.value + "px" ;
+
+        coronavirusemsciframe.style.webkitTransform = "scale(" + zoom.value + ")";
+        coronavirusemsciframe.style.msZoom = "scale(" + zoom.value + ")";
+        coronavirusemsciframe.style.mozTransform = "scale(" + zoom.value + ")";
+        coronavirusemsciframe.style.oTransform = "scale(" + zoom.value + ")";
+
+
+        coronavirusemsciframe.style.filter = "hue-rotate("+cor.value+"deg)";
+
+        coronavirusemsciframe.style.border = tamanhodaborda.value + "px solid rgba(0, 247, 148, .3)" ;
+
+        if(scrollingcheckbox.checked == true) {
+          coronavirusemsciframe.scrolling = "yes";
+          var scrolling = 'scrolling="yes"';
+        }else{coronavirusemsciframe.scrolling = "no"; var scrolling = 'scrolling="no"';}
+
+        codigo.value = "<iframe src='https://coronavirusemsc.com.br/' id='coronavirusemsciframe' "+scrolling+"></iframe><style>#coronavirusemsciframe{width:"+largura.value+"px;height:"+altura.value+"px;-ms-zoom: "+zoom.value+";-moz-transform: scale("+zoom.value+");-moz-transform-origin: 0 0;-o-transform: scale("+zoom.value+");-o-transform-origin: 0 0;-webkit-transform: scale("+zoom.value+");-webkit-transform-origin: 0 0;border: "+tamanhodaborda.value+"px solid rgba(0, 247, 148, .3);filter:hue-rotate("+cor.value+"deg)}</style>";
+
+
+      }, 10);
+
+
+
+      function Copytext() {
+        var copyText = document.getElementById("codigo");
+        copyText.select();
+        copyText.setSelectionRange(0, 99999);
+        document.execCommand("copy");
+        alert("Texto copiado.");
+      }
+
+      function Hide(){
+        if (closebtn.checked == true){
+          settingswindow.style.transform = "translateX(100%)";
+
+        } else {
+          settingswindow.style.transform = "translateX(0%)";
+        }
+
+      }
+
+    </script>
+
+  </body>
+</html>
